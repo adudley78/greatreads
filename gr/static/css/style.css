@@ -14,17 +14,17 @@ img {
 .social a {
   margin-right: 0.4rem; }
 
-#showcase {
-  background: url(../img/showcase.jpg) no-repeat top center fixed/cover;
+#bookshelf {
+  background: url(../img/books-about-jessica-ruscello-OQSCtabGkSY-unsplash.jpg) no-repeat top center fixed/cover;
   position: relative;
   min-height: 650px;
   color: #fff;
   padding-top: 6rem; }
-  #showcase .home-search {
+  #bookshelf .home-search {
     min-height: 400px;
     position: relative;
     border-radius: 5px; }
-  #showcase .overlay {
+  #bookshelf .overlay {
     content: '';
     position: absolute;
     top: 0;
@@ -33,12 +33,12 @@ img {
     width: 100%;
     background: rgba(51, 51, 51, 0.8); }
 
-#services {
-  background: url(../img/building.jpg) no-repeat top center fixed/cover;
+#features {
+  background: url(../img/bookshelf-susan-yin-2JIvboGLeho-unsplash.jpg) no-repeat top center fixed/cover;
   min-height: 300px;
   position: relative;
   overflow: hidden; }
-  #services::before {
+  #features::before {
     content: '';
     position: absolute;
     top: 0;
@@ -47,12 +47,12 @@ img {
     width: 100%;
     background: rgba(32, 134, 107, 0.8); }
 
-#showcase-inner {
-  background: url(../img/building.jpg) no-repeat top center fixed/cover;
+#bookshelf-inner {
+  background: url(../img/bookshelf-susan-yin-2JIvboGLeho-unsplash.jpg) no-repeat top center fixed/cover;
   position: relative;
   overflow: hidden;
   min-height: 200px; }
-  #showcase-inner::before {
+  #bookshelf-inner::before {
     content: '';
     position: absolute;
     top: 0;
@@ -60,29 +60,29 @@ img {
     min-height: 100%;
     width: 100%;
     background: rgba(32, 134, 107, 0.8); }
-  #showcase-inner.showcase-search {
+  #bookshelf-inner.home-search {
     min-height: 270px; }
 
-#work {
+#promo {
   padding: 6rem 0; }
 
 .listing-preview a {
   position: relative; }
 
 @media (max-width: 991px) {
-  #showcase {
+  #bookshelf {
     padding-top: 4rem; }
-    #showcase h1 {
+    #bookshelf h1 {
       font-size: 40px; }
   .hide-md-down {
     display: none; } }
 
 @media (max-width: 768px) {
-  #showcase {
+  #bookshelf {
     padding-top: 3rem; }
-    #showcase h1 {
+    #bookshelf h1 {
       font-size: 40px; }
-    #showcase p {
+    #bookshelf p {
       display: none; }
   #top-bar {
     text-align: center; }
@@ -90,7 +90,7 @@ img {
       text-align: center !important; } }
 
 @media (max-width: 576px) {
-  #showcase h1 {
+  #bookshelf h1 {
     font-size: 30px; }
-  #showcase-inner h1 {
+  #bookshelf-inner h1 {
     font-size: 40px; } }
