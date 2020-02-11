@@ -8,3 +8,6 @@ def index(request):
 
 def about(request):
     return render(request, 'pages/about.html')
+
+def hot(request):
+    return render(request, 'pages/hot.html')
