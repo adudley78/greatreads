@@ -5,9 +5,8 @@ from django.http import HttpResponse
 def index(request):
     return render(request, 'pages/index.html')
 
-
 def about(request):
     return render(request, 'pages/about.html')
 
-def hot(request):
-    return render(request, 'pages/hot.html')
+def featured(request):
+    return render(request, 'pages/featured.html')
