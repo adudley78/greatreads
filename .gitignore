@@ -124,3 +124,7 @@ dmypy.json
 venv
 
 /static
+
+gr/settings.py
+
+NOTES.md
