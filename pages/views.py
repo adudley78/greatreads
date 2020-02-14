@@ -1,9 +1,16 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
+from books.models import Book
 
 def index(request):
-    return render(request, 'pages/index.html')
+    books = Book.objects.order_by('-add_date')
+
+    context = {
+        'books': books
+    }
+
+    return render(request, 'pages/index.html', context)
 
 def about(request):
     return render(request, 'pages/about.html')
