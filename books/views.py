@@ -11,7 +11,7 @@ def index(request):
 
   return render(request, 'books/books.html', context)
 
-def book(request):
+def book(request, book_id):
   return render(request, 'books/book.html')
 
 def search(request):
