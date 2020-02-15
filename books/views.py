@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 
 from .models import Book
@@ -17,7 +17,13 @@ def index(request):
   return render(request, 'books/books.html', context)
 
 def book(request, book_id):
-  return render(request, 'books/book.html')
+  book = get_object_or_404(Book, pk=book_id)
+
+  context = {
+    'book': book
+  }
+
+  return render(request, 'books/book.html', context)
 
 def search(request):
   return render(request, 'books/search.html')

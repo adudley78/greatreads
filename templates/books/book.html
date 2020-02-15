@@ -1,1 +1,80 @@
-<h1>Book</h1>
+{% extends 'base.html' %}
+
+{% load humanize %}
+
+{% block content %}
+  <section id="showcase-inner" class="py-5 text-white">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-12">
+          <h1 class="display-4">{{ book.title }}</h1>
+          <p class="lead">
+            <i class="fas fa-map-marker"></i> {{ book.author }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Breadcrumb -->
+  <section id="bc" class="mt-3">
+    <div class="container">
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="{% url 'index' %}">Home</a>
+          </li>
+          <li class="breadcrumb-item">
+            <a href="{% url 'books' %}">Books</a>
+          </li>
+          <li class="breadcrumb-item active">{{ book.title }}</li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Book -->
+  <section id="book" class="py-4">
+    <div class="container">
+      <a href="{% url 'books' %}" class="btn btn-light mb-4">Back To Books</a>
+      <div class="row">
+        <div class="col-md-9">
+          <img src="{{ book.cover_img.url }}" alt="" class="img-main img-fluid mb-3">
+          <!-- Fields -->
+          <div class="row mb-5 fields">
+            <div class="col-md-6">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item text-secondary">
+                  <i class="fas fa-calendar"></i> Add Date:
+                  <span class="float-right">{{ book.add_date }}</span>
+                </li>
+                <li class="list-group-item text-secondary">
+                  <i class="fas fa-bed"></i> Reader:
+                  <span class="float-right">{{ book.reader }}
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Description -->
+          <div class="row mb-5">
+            <div class="col-md-12">
+              {{ book.notes }}
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card mb-3">
+            <img class="card-img-top" src="{{ book.reader.profile_img.url}}" alt="Reader of the month">
+            <div class="card-body">
+              <h5 class="card-title">Reader</h5>
+              <h6 class="text-secondary">{{ book.reader }}</h6>
+            </div>
+          </div>
+          <button class="btn-primary btn-block btn-lg" data-toggle="modal" data-target="#inquiryModal">Connect</button>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+{% endblock %}
