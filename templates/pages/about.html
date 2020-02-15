@@ -42,16 +42,20 @@
             commodi id libero eveniet harum perferendis laborum molestias quia.</p>
         </div>
         <div class="col-md-4">
-          <div class="card">
-            <img class="card-img-top" src="assets/img/realtors/kyle.jpg" alt="Seller of the month">
-            <div class="card-body">
-              <h5 class="card-title">Reader Of The Month</h5>
-              <h6 class="text-secondary">Kyle Brown</h6>
-              <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis nesciunt amet, illo itaque similique repellat.
-                content.
-              </p>
-            </div>
-          </div>
+          {% if top_readers %}
+            {% for reader in top_readers %}
+              <div class="card">
+                <img class="card-img-top" src="{{ reader.profile_img.url }}" alt="Seller of the month">
+                <div class="card-body">
+                  <h5 class="card-title">Reader Of The Month</h5>
+                  <h6 class="text-secondary">{{ reader.name }}</h6>
+                  <p class="card-text">{{ reader.bio }}
+                  </p>
+                </div>
+              </div>
+            {% endfor %}
+          {% endif %}
+          
         </div>
       </div>
     </div>
@@ -68,30 +72,22 @@
   <!-- Readers -->
   <section id="readers" class="py-5">
     <div class="container">
-      <h2 class="text-center">Readers Like You</h2>
+      <h2 class="text-center">Top Readers</h2>
       <div class="row text-center">
-        
-        <div class="col-md-4">
-          <img src="assets/img/realtors/kyle.jpg" alt="" class="rounded-circle mb-3">
-          <h4>Kyle Brown</h4>
-          <p class="text-success">
-            <i class="fas fa-award text-success mb-3"></i> Reader</p>
-        </div>
-
-        <div class="col-md-4">
-          <img src="assets/img/realtors/mark.jpg" alt="" class="rounded-circle mb-3">
-          <h4>Mark Hudson</h4>
-          <p class="text-success">
-          <i class="fas fa-award text-success mb-3"></i> Reader</p>
-        </div>
-
-        <div class="col-md-4">
-          <img src="assets/img/realtors/jenny.jpg" alt="" class="rounded-circle mb-3">
-          <h4>Jenny Johnson</h4>
-          <p class="text-success">
-          <i class="fas fa-award text-success mb-3"></i> Reader</p>
-        </div>
-
+        {% if readers %}
+          {% for reader in readers %}
+          <div class="col-md-4">
+            <img src="{{ reader.profile_img.url }}" alt="" class="rounded-circle mb-3">
+            <h4>{{ reader.name }}</h4>
+            <p class="text-success">
+              <i class="fas fa-award text-success mb-3"></i> Top Reader</p>
+          </div>
+          {% endfor %}
+        {% else %}
+          <div class="col-md-12">
+            <p>No Readers Found</p>
+          </div>
+        {% endif %}
       </div>
     </div>
   </section>
