@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
+from books.choices import genre_choices
+
 from books.models import Book
 from readers.models import Reader
 
@@ -8,7 +10,8 @@ def index(request):
     books = Book.objects.order_by('-add_date')
 
     context = {
-        'books': books
+        'books': books,
+        'genre_choices': genre_choices,
     }
 
     return render(request, 'pages/index.html', context)

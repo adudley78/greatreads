@@ -1,5 +1,6 @@
 from django.shortcuts import get_object_or_404, render
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
+from books.choices import genre_choices
 
 from .models import Book
 
@@ -26,4 +27,9 @@ def book(request, book_id):
   return render(request, 'books/book.html', context)
 
 def search(request):
-  return render(request, 'books/search.html')
+
+  context = {
+    'genre_choices': genre_choices,
+  }
+
+  return render(request, 'books/search.html', context)

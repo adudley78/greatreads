@@ -5,7 +5,7 @@
 {% block content %}
 
   <!-- Bookshelf -->
-  <section id="bookshelf">
+  <section id="showcase">
     <div class="container text-center">
       <div class="home-search p-5">
         <div class="overlay p-5">
@@ -15,7 +15,7 @@
           <p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae quas, asperiores eveniet vel nostrum magnam
             voluptatum tempore! Consectetur, id commodi!</p>
           <div class="search">
-            <form action="search.html">
+            <form action="{% url 'search' %}">
 
               <!-- Form Row 1 -->
               <div class="form-row">
@@ -33,8 +33,18 @@
                   <label class="sr-only">Title</label>
                   <input type="text" name="title" class="form-control" placeholder="Title">
                 </div>
+
+                <div class="col-md-4 mb-3">
+                  <label for="" class="sr-only">Genre</label>
+                  <select name="genre" class="form-control" >
+                    <option selected="true" disabled="disabled" >Genre (All)</option>
+                    {% for key,value in genre_choices.items %}
+                      <option value="{{ key }}">{{ value }}</option>
+                    {% endfor %}
+                  </select>
+                </div>
+
               </div>
-    
               <button class="btn btn-secondary btn-block mt-4" type="submit">Submit to search</button>
             </form>
           </div>
