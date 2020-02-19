@@ -47,7 +47,8 @@ def search(request):
 
   context = {
     'genre_choices': genre_choices,
-    'books': queryset_list
+    'books': queryset_list,
+    'values': request.GET,
   }
 
   return render(request, 'books/search.html', context)
